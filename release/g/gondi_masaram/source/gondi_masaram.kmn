@@ -1,0 +1,163 @@
+﻿c This keyboard layout follows the WinScript layout which is based on the sounds of the familiar roman/latin keyboard.
+c by Mark_Penny@sil.org (April 2020)
+store(&VERSION) '9.0'
+store(&NAME) 'Gondi Masaram'
+store(&TARGETS) 'any'
+store(&COPYRIGHT) '© 2020 SIL International'
+store(&MESSAGE) 'Open Source Project with MIT License'
+store(&KMW_HELPTEXT) 'Enables typing in the Masaram Gondi script'
+store(&KEYBOARDVERSION) '1.0.5'
+store(&VISUALKEYBOARD) 'gondi_masaram.kvks'
+store(&BITMAP) 'gondi_masaram.ico'
+store(&LAYOUTFILE) 'gondi_masaram.keyman-touch-layout'
+begin Unicode > use(main)
+
+group(main) using keys
+
+store (vowel)    'a'     'i'     'u'     'e'             'o'\
+                 'A'     'I'     'U'     'E'     'Y'     'O'      'V'
+store (vowelU) U+11D00 U+11D02 U+11D04 U+11D06         U+11D09 \
+               U+11D01 U+11D03 U+11D05 U+11D06 U+11D08 U+11D09 U+11D0B
+                                     c U+11D07    &    U+11D0A           not yet implemented for e and o
+
+store (consonant)    'k'     'K'     'g'     'G'     'W'   \
+                     'c'     'C'     'j'     'J'     'w'   \
+                     't'     'T'     'd'     'D'     'N'   \
+                     'q'     'Q'     '['     '{'     'n'   \
+                     'p'     'P'     'b'     'B'     'm'   \
+                     'y'     'r'     'l'     'v'           \
+                     'z'     'Z'     's'     'h'     'L'   \
+                     '&'     '%'     '#'
+store (consonantU) U+11D0C U+11D0D U+11D0E U+11D0F U+11D10 \
+                   U+11D11 U+11D12 U+11D13 U+11D14 U+11D15 \
+                   U+11D16 U+11D17 U+11D18 U+11D19 U+11D1A \
+                   U+11D1B U+11D1C U+11D1D U+11D1E U+11D1F \
+                   U+11D20 U+11D21 U+11D22 U+11D23 U+11D24 \
+                   U+11D25 U+11D26 U+11D27 U+11D28         \
+                   U+11D29 U+11D2A U+11D2B U+11D2C U+11D2D \
+                   U+11D2E U+11D2F U+11D30
+
+c Masaram Gondi Conjunct letters: 
+c U+11D2E $MASARAM_GONDI_LETTER_KSSA = & = (k x Z)
+c U+11D2F $MASARAM_GONDI_LETTER_JNYA = % = (j x w)
+c U+11D30 $MASARAM_GONDI_LETTER_TRA  = # = (q x r)
+
+c U+11D46 $MASARAM_GONDI_REPHA         = $
+c U+11D47 $MASARAM_GONDI_RA-KARA       = F
+
+c U+11D36 $MASARAM_GONDI_VOWEL_SIGN_VOCALIC_R
+
+store (diacriticalmod)    'M'     'H'     'f'     ']'
+store (diacriticalmodU) U+11D40 U+11D41 U+11D42 U+11D43
+c                      anusvara visarga  nukta  chandra
+
+store (number)    '0'     '1'     '2'     '3'     '4'     '5'     '6'     '7'     '8'     '9'
+store (Masaram) U+11D50 U+11D51 U+11D52 U+11D53 U+11D54 U+11D55 U+11D56 U+11D57 U+11D58 U+11D59
+
+store (unused) 'S' 
++ any(unused) > beep
+
++ '$' > U+11D46 c $MASARAM_GONDI_REPHA
++ 'F' > U+11D47 c $MASARAM_GONDI_RA-KARA
+
++ any(vowel) > index(vowelU,1)
++ any(consonant) > index(consonantU,1) 
++ any(diacriticalmod) > index(diacriticalmodU,1) 
++ any(number) > index(Masaram,1) 
+
+any (consonantU) + 'A' > context U+11D31  
+any (consonantU) + 'i' > context U+11D32
+any (consonantU) + 'I' > context U+11D33
+any (consonantU) + 'u' > context U+11D34
+any (consonantU) + 'U' > context U+11D35
+any (consonantU) + 'R' > context U+11D36    c $MASARAM_GONDI_VOWEL_SIGN_VOCALIC_R
+any (consonantU) + 'e' > context U+11D3A    
+any (consonantU) + 'E' > context U+11D3A    c U+11D3B not yet implemented in Unicode
+any (consonantU) + 'Y' > context U+11D3C
+any (consonantU) + 'o' > context U+11D3D    
+any (consonantU) + 'O' > context U+11D3D    c U+11D3E not yet implemented in Unicode
+any (consonantU) + 'V' > context U+11D3F
+
+any (consonantU) + any(diacriticalmod) > context index(diacriticalmodU,2)
+
++ 'x' > beep c these cannot occur unless they follow a consonant
++ 'X' > beep c these cannot occur unless they follow a consonant
+any (consonantU) + 'x'  > context U+11D45  c $MASARAM_GONDI_VIRAMA
+any (consonantU) + 'X'  > context U+11D44  c $MASARAM_GONDI_HALANTA
+
+any (consonantU) 'A' + any(diacriticalmod) > context index(diacriticalmodU,3) 
+any (consonantU) 'i' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'I' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'u' + any(diacriticalmod) > context index(diacriticalmodU,3) 
+any (consonantU) 'U' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'R' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'e' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'E' + any(diacriticalmod) > context index(diacriticalmodU,3)
+any (consonantU) 'Y' + any(diacriticalmod) > context index(diacriticalmodU,3)
+any (consonantU) 'o' + any(diacriticalmod) > context index(diacriticalmodU,3)  
+any (consonantU) 'O' + any(diacriticalmod) > context index(diacriticalmodU,3) 
+any (consonantU) 'V' + any(diacriticalmod) > context index(diacriticalmodU,3) 
+
+c Punctuation marks & Smart Quotes
++ "|"        > U+0964    c $DEVANAGARI_DANDA
+U+0964 + "|" > U+0965    c $DEVANAGARI_DOUBLE_DANDA
+
++ "<"        > U+2018    c opening single smart quote
+U+2018 + "<" > U+201C    c opening double smart quotes
++ ">"        > U+2019    c closing single smart quote
+U+2019 + ">" > U+201D    c closing double smart quotes
+
+c "-" + "-" > U+005F U+005F               c Drawing line
+c U+005F U+005F + '-' > context U+005F    c Drawing line
+
+c LongPress Arabic Digits
++ [T_0] > '0'
++ [T_1] > '1'
++ [T_2] > '2'
++ [T_3] > '3'
++ [T_4] > '4'
++ [T_5] > '5'
++ [T_6] > '6'
++ [T_7] > '7'
++ [T_8] > '8'
++ [T_9] > '9'
+
+c Some other fun things to have
++ [T_GMAIL] > '@gmail.com'
++ [T_YAHOO] > '@yahoo.com'
+
++ [K_BKQUOTE] > '`'
++ [K_HYPHEN] > '-'
++ [K_BKSLASH] > '\'
++ [SHIFT K_2] > '@'
++ [SHIFT K_BKQUOTE] > '~'
+c + [SHIFT K_BKSLASH] > '|'
++ [SHIFT K_6] > '^'
++ [SHIFT K_EQUAL] > '+'
++ [SHIFT K_HYPHEN] > '_'
++ [SHIFT K_8] > '*'
++ [SHIFT K_0] > ')'
++ [SHIFT K_9] > '('
+c + [SHIFT K_4] > '$'
++ [SHIFT K_QUOTE] > '"'
++ [SHIFT K_1] > '!'
++ [K_QUOTE] > U+0027
++ [K_COMMA] > ','
++ [K_SLASH] > '/'
++ [K_PERIOD] > '.'
++ [K_EQUAL] > '='
+c + [SHIFT K_COMMA] > '<'
+c + [SHIFT K_PERIOD] > '>'
++ [SHIFT K_COLON] > ':'
++ [K_COLON] > ';'
+
++ [ALT K_9] > '9'
++ [ALT K_8] > '8'
++ [ALT K_7] > '7'
++ [ALT K_6] > '6'
++ [ALT K_5] > '5'
++ [ALT K_4] > '4'
++ [ALT K_3] > '3'
++ [ALT K_2] > '2'
++ [ALT K_1] > '1'
++ [ALT K_0] > '0'

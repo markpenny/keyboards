@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <System>
+    <KeymanDeveloperVersion>13.0.112.0</KeymanDeveloperVersion>
+    <FileVersion>7.0</FileVersion>
+  </System>
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <ReadMeFile>..\README.md</ReadMeFile>
+    <GraphicFile>Splash.png</GraphicFile>
+    <MSIFileName>C:\Program Files (x86)\Common Files\Keyman\Cached Installer Files\{29AE9ECB-D152-4018-A9F9-93B2B6859368}\keymandesktop.msi</MSIFileName>
+    <MSIOptions></MSIOptions>
+    <FollowKeyboardVersion/>
+  </Options>
+  <StartMenu>
+    <Folder></Folder>
+    <Items/>
+  </StartMenu>
+  <Info>
+    <Version URL=""></Version>
+    <Name URL="">Gondi Masaram</Name>
+    <Copyright URL="">© 2020 SIL International</Copyright>
+    <Author URL="mailto:mark_penny@sil.org">Mark Penny</Author>
+  </Info>
+  <Files>
+    <File>
+      <Name>..\build\gondi_masaram.js</Name>
+      <Description>File gondi_masaram.js</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.js</FileType>
+    </File>
+    <File>
+      <Name>..\build\gondi_masaram.kvk</Name>
+      <Description>File gondi_masaram.kvk</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kvk</FileType>
+    </File>
+    <File>
+      <Name>..\build\gondi_masaram.kmx</Name>
+      <Description>Keyboard Gondi Masaram</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kmx</FileType>
+    </File>
+    <File>
+      <Name>Splash.png</Name>
+      <Description>File Splash.png</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.png</FileType>
+    </File>
+    <File>
+      <Name>gondi_masaram.ico</Name>
+      <Description>File gondi_masaram.ico</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ico</FileType>
+    </File>
+    <File>
+      <Name>..\README.md</Name>
+      <Description>File README.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>..\extras\NotoSansMasaramGondi-Regular.ttf</Name>
+      <Description>Font Noto Sans Masaram Gondi Regular</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ttf</FileType>
+    </File>
+  </Files>
+  <Keyboards>
+    <Keyboard>
+      <Name>Gondi Masaram</Name>
+      <ID>gondi_masaram</ID>
+      <Version>1.0.5</Version>
+      <OSKFont>..\extras\NotoSansMasaramGondi-Regular.ttf</OSKFont>
+      <DisplayFont>..\extras\NotoSansMasaramGondi-Regular.ttf</DisplayFont>
+      <Languages>
+        <Language ID="gon-Gonm">Gondi (Masaram Gondi)</Language>
+        <Language ID="esg-Gonm">Aheri Gondi (Masaram Gondi)</Language>
+        <Language ID="wsg-Gonm">Adilabad Gondi (Masaram Gondi)</Language>
+      </Languages>
+    </Keyboard>
+  </Keyboards>
+  <Strings/>
+</Package>

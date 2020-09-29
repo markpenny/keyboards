@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KeymanDeveloperProject>
+  <Options>
+    <BuildPath>$PROJECTPATH\build</BuildPath>
+    <CompilerWarningsAsErrors>False</CompilerWarningsAsErrors>
+    <WarnDeprecatedCode>True</WarnDeprecatedCode>
+    <CheckFilenameConventions>False</CheckFilenameConventions>
+    <ProjectType>keyboard</ProjectType>
+  </Options>
+  <Files>
+    <File>
+      <ID>id_7189b4605c036d2be830437c3bb50a1f</ID>
+      <Filename>gondi_masaram.kmn</Filename>
+      <Filepath>source\gondi_masaram.kmn</Filepath>
+      <FileVersion>1.0.5</FileVersion>
+      <FileType>.kmn</FileType>
+      <Details>
+        <Name>Gondi Masaram</Name>
+        <Copyright>© 2020 SIL International</Copyright>
+        <Message>Open Source Project with MIT License</Message>
+      </Details>
+    </File>
+    <File>
+      <ID>id_286fb6ec4d2b3657d2e9dadd0d936754</ID>
+      <Filename>gondi_masaram.kps</Filename>
+      <Filepath>source\gondi_masaram.kps</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.kps</FileType>
+      <Details>
+        <Name>Gondi Masaram</Name>
+        <Copyright>© 2020 SIL International</Copyright>
+      </Details>
+    </File>
+    <File>
+      <ID>id_4133117af087a070e5c45d9c6e3a73ef</ID>
+      <Filename>gondi_masaram.ico</Filename>
+      <Filepath>source\gondi_masaram.ico</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.ico</FileType>
+      <ParentFileID>id_7189b4605c036d2be830437c3bb50a1f</ParentFileID>
+    </File>
+    <File>
+      <ID>id_07ddf14dbf749f5006b9df7ffd78a6cc</ID>
+      <Filename>gondi_masaram.js</Filename>
+      <Filepath>source\..\build\gondi_masaram.js</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.js</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+    <File>
+      <ID>id_fc7d45b72e759e33eebf4e72563448a6</ID>
+      <Filename>gondi_masaram.kvk</Filename>
+      <Filepath>source\..\build\gondi_masaram.kvk</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.kvk</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+    <File>
+      <ID>id_71b2f74975cbc0ccee353ed249dfd664</ID>
+      <Filename>gondi_masaram.kmx</Filename>
+      <Filepath>source\..\build\gondi_masaram.kmx</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.kmx</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+    <File>
+      <ID>id_f6e7ba45d40eed14a854fd7b967cb1e2</ID>
+      <Filename>Splash.png</Filename>
+      <Filepath>source\Splash.png</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.png</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+    <File>
+      <ID>id_26166d1a422f83d7ec48c4ba6ac70915</ID>
+      <Filename>README.md</Filename>
+      <Filepath>source\..\README.md</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.md</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+    <File>
+      <ID>id_25a06017ac446df9bb435d71a0536815</ID>
+      <Filename>NotoSansMasaramGondi-Regular.ttf</Filename>
+      <Filepath>source\..\extras\NotoSansMasaramGondi-Regular.ttf</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.ttf</FileType>
+      <ParentFileID>id_286fb6ec4d2b3657d2e9dadd0d936754</ParentFileID>
+    </File>
+  </Files>
+</KeymanDeveloperProject>
